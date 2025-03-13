@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Dictionary App</h1> 
+      <h1>Dictionary App</h1>
 
       {/* Search bar and button */}
       <div>
@@ -51,11 +51,11 @@ function App() {
           placeholder="Enter word to search"
         />
         <button onClick={handleSearch}>Search</button>
+        <h3>Definition:</h3>
       </div>
 
       {definition && (
         <div>
-          <h3>Definition:</h3>
           <p>{definition}</p>
         </div>
       )}
