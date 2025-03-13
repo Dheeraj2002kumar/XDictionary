@@ -18,7 +18,6 @@ const initialDictionary = [
 ];
 
 function App() {
-
   const [searchTerm, setSearchTerm] = useState("");
   const [definition, setDefinition] = useState("");
   const [error, setError] = useState("");
@@ -40,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Dictionary App</h1> 
+      <h1>Dictionary App</h1>
 
       {/* Search bar and button */}
       <div>
@@ -49,10 +48,14 @@ function App() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Enter word to search"
+          aria-label="Search for a word"
         />
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={handleSearch} aria-label="Search button">
+          Search
+        </button>
       </div>
 
+      {/* Display definition if found */}
       {definition && (
         <div>
           <h3>Definition:</h3>
@@ -60,7 +63,13 @@ function App() {
         </div>
       )}
 
-      {error &&  (<div><h3>Definition:</h3><p>{error}</p> </div>)}
+      {/* Display error message if word not found */}
+      {error && (
+        <div>
+          <h3>Definition:</h3>
+          <p>{error}</p>
+        </div>
+      )}
     </div>
   );
 }
