@@ -54,11 +54,11 @@ function App() {
           Search
         </button>
       </div>
+      <h3>Definition:</h3>
 
       {/* Display definition if found */}
       {definition && (
         <div>
-          <h3>Definition:</h3>
           <p>{definition}</p>
         </div>
       )}
@@ -66,7 +66,6 @@ function App() {
       {/* Display error message if word not found */}
       {error && (
         <div>
-          <h3>Definition:</h3>
           <p>{error}</p>
         </div>
       )}
